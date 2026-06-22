@@ -1,0 +1,36 @@
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyc
+.Python
+*.egg-info/
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Data (CSVs are large and shouldn't live in the repo)
+*.csv
+data/
+
+# Kaggle / kagglehub cache, if downloaded into this folder
+.kaggle/
+kagglehub/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Model checkpoints / saved models (if you export any later)
+*.h5
+*.pkl
+*.joblib
