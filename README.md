@@ -35,10 +35,14 @@ An end-to-end analysis of Sephora's skincare product catalog and ~1 million cust
 - Rule-based scoring with **TextBlob** and **VADER**
 - Deep learning: **LSTM** and **Bidirectional LSTM** classifiers predicting `is_recommended` from review text
 
+![Word cloud of most frequent terms in skincare reviews](images/wordcloud.png)
+
 | Model | Test Accuracy | F1 Score |
 |---|---|---|
 | Basic LSTM | 50.9% | — |
 | Bidirectional LSTM | **90.7%** | 0.91 |
+
+![Confusion matrix for the Bidirectional LSTM model](images/lstm_confusion_matrix.png)
 
 **4. Product Recommendation**
 - TF-IDF vectorization on combined product name, brand, and ingredients
@@ -49,6 +53,8 @@ An end-to-end analysis of Sephora's skincare product catalog and ~1 million cust
 - Rule-based behavioral segmentation (**Loyal / Satisfied / Critical**) from rating, helpfulness, and recommendation status
 - Cross-segmentation by skin tone, eye color, and skin type
 - Unsupervised clustering (**K-Means** and **DBSCAN**) on rating/feedback features
+
+![Customer behavior segmentation breakdown](images/customer_behavior.png)
 
 **6. Product Success Prediction**
 - Defined "success" as rating ≥ 4.5 **and** above-average `loves_count`
@@ -84,13 +90,19 @@ Feature importance (Random Forest, XGBoost, and permutation importance for KNN) 
 ```
 .
 ├── final_project.ipynb   # Full analysis notebook
+├── requirements.txt
+├── .gitignore
+├── images/               # Plots referenced in this README
+│   ├── wordcloud.png
+│   ├── lstm_confusion_matrix.png
+│   └── customer_behavior.png
 └── README.md
 ```
 
 ## Setup
 
 ```bash
-pip install numpy pandas matplotlib seaborn scipy scikit-learn kagglehub nltk wordcloud textblob tensorflow xgboost
+pip install -r requirements.txt
 ```
 
 Within the notebook, NLTK resources are downloaded on first run:
